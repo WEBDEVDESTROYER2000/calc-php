@@ -15,6 +15,7 @@
                 <option value="exponentiate">**</option>
                 <option value="absolute-add">|+|</option>
                 <option value="absolute-subtract">|-|</option>
+                <option value="radical">√</option>
             </select>
             <input required type="number" name="num2" placeholder="SECOND_NUMBER"><br>
             <button type="submit">Calculate</button>
@@ -56,7 +57,7 @@
                     echo $value;
                     break;
                 case "exponentiate":
-                    $value=$num1**$num2;
+                    $value=pow($num1,$num2);
                     echo $value;
                     break;
                 case "absolute-add":
@@ -66,6 +67,10 @@
                 case "absolute-subtract":
                     $value=abs($num1-$num2);
                     echo "|",$value,"|";
+                    break;
+                case "radical":
+                    $value=$num1*sqrt($num2);
+                    echo $value;
                     break;
                 default:
                     echo "FAIL!";
