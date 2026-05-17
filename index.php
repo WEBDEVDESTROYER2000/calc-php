@@ -16,6 +16,7 @@
                 <option value="absolute-add">|+|</option>
                 <option value="absolute-subtract">|-|</option>
                 <option value="radical">√</option>
+                <option value="random">?</option>
             </select>
             <input required type="number" name="num2" placeholder="SECOND_NUMBER"><br>
             <button type="submit">Calculate</button>
@@ -70,6 +71,10 @@
                     break;
                 case "radical":
                     $value=$num1*sqrt($num2);
+                    echo $value;
+                    break;
+                case "random":
+                    $value=rand($num1,$num2);
                     echo $value;
                     break;
                 default:
