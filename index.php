@@ -13,6 +13,8 @@
                 <option value="divide">/</option>
                 <option value="modulate">%</option>
                 <option value="exponentiate">**</option>
+                <option value="absolute-add">|+|</option>
+                <option value="absolute-subtract">|-|</option>
             </select>
             <input required type="number" name="num2" placeholder="SECOND_NUMBER"><br>
             <button type="submit">Calculate</button>
@@ -56,6 +58,14 @@
                 case "exponentiate":
                     $value=$num1**$num2;
                     echo $value;
+                    break;
+                case "absolute-add":
+                    $value=abs($num1+$num2);
+                    echo "|",$value,"|";
+                    break;
+                case "absolute-subtract":
+                    $value=abs($num1-$num2);
+                    echo "|",$value,"|";
                     break;
                 default:
                     echo "FAIL!";
